@@ -47,10 +47,10 @@
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dailySalesReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dailyPurchaseReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.customerPurhcaseReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customSalesReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.stockReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerBalancesReportToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.customerBalancesReportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,6 +63,11 @@
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslabelDateTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -214,6 +219,11 @@
             this.dailyPurchaseReportToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.dailyPurchaseReportToolStripMenuItem.Text = "Daily Purchase Report";
             // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(210, 6);
+            // 
             // customerPurhcaseReportToolStripMenuItem
             // 
             this.customerPurhcaseReportToolStripMenuItem.Name = "customerPurhcaseReportToolStripMenuItem";
@@ -230,11 +240,6 @@
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(210, 6);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(210, 6);
             // 
             // stockReportToolStripMenuItem
             // 
@@ -307,13 +312,15 @@
             // tsslabelDateTime
             // 
             this.tsslabelDateTime.Name = "tsslabelDateTime";
-            this.tsslabelDateTime.Size = new System.Drawing.Size(654, 17);
+            this.tsslabelDateTime.Size = new System.Drawing.Size(685, 17);
             this.tsslabelDateTime.Spring = true;
             this.tsslabelDateTime.Text = "toolStripStatusLabel6";
             this.tsslabelDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(424, 84);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
@@ -322,6 +329,66 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(344, 135);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
+            this.button2.Size = new System.Drawing.Size(122, 45);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "button1";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(282, 207);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
+            this.button3.Size = new System.Drawing.Size(122, 45);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "button1";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(582, 84);
+            this.button4.Name = "button4";
+            this.button4.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
+            this.button4.Size = new System.Drawing.Size(122, 45);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "button1";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(665, 135);
+            this.button5.Name = "button5";
+            this.button5.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
+            this.button5.Size = new System.Drawing.Size(122, 45);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "button1";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Location = new System.Drawing.Point(730, 207);
+            this.button6.Name = "button6";
+            this.button6.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
+            this.button6.Size = new System.Drawing.Size(122, 45);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "button1";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // FrmInventorySystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,6 +396,11 @@
             this.BackgroundImage = global::InventorySystem.Properties.Resources.Inventory;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(996, 471);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -385,5 +457,10 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
         private System.Windows.Forms.ToolStripStatusLabel tsslabelDateTime;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
