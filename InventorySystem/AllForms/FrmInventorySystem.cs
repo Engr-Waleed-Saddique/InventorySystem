@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventorySystem.AllForms.StockForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,5 +23,10 @@ namespace InventorySystem.AllForms
             tsslabelDateTime.Text = DateTime.Now.ToString("dddd MMMM yyyy hh:mm:ss");
         }
 
+        private void categoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCategory frm = new frmCategory();
+            frm.ShowDialog();
+        }
     }
 }

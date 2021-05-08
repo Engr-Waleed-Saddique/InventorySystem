@@ -55,6 +55,7 @@
             this.customerBalancesReportToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
             this.customerBalancesReportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.supplierBalancesReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -62,18 +63,26 @@
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslabelDateTime = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnNewSale = new System.Windows.Forms.Button();
+            this.btnSalePayment = new System.Windows.Forms.Button();
+            this.btnCustomerBalance = new System.Windows.Forms.Button();
+            this.btnNewPurchase = new System.Windows.Forms.Button();
+            this.btnPurchasePayment = new System.Windows.Forms.Button();
+            this.btnSupplierBalance = new System.Windows.Forms.Button();
+            this.btnDailySaleReport = new System.Windows.Forms.Button();
+            this.btnCustomSaleReport = new System.Windows.Forms.Button();
+            this.btnDailyPurchaseReport = new System.Windows.Forms.Button();
+            this.btnCustomPurchaseReport = new System.Windows.Forms.Button();
+            this.btnStock = new System.Windows.Forms.Button();
+            this.btnStockReport = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.saleToolStripMenuItem,
@@ -81,17 +90,20 @@
             this.customersToolStripMenuItem,
             this.suppliersToolStripMenuItem,
             this.stockToolStripMenuItem,
-            this.reportsToolStripMenuItem});
+            this.reportsToolStripMenuItem,
+            this.logInToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(996, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1017, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // saleToolStripMenuItem
@@ -100,26 +112,28 @@
             this.newSaleToolStripMenuItem,
             this.salePaymentToolStripMenuItem,
             this.customerBalancesToolStripMenuItem});
+            this.saleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saleToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.saleToolStripMenuItem.Name = "saleToolStripMenuItem";
-            this.saleToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.saleToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
             this.saleToolStripMenuItem.Text = "Sale";
             // 
             // newSaleToolStripMenuItem
             // 
             this.newSaleToolStripMenuItem.Name = "newSaleToolStripMenuItem";
-            this.newSaleToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.newSaleToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.newSaleToolStripMenuItem.Text = "New Sale";
             // 
             // salePaymentToolStripMenuItem
             // 
             this.salePaymentToolStripMenuItem.Name = "salePaymentToolStripMenuItem";
-            this.salePaymentToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.salePaymentToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.salePaymentToolStripMenuItem.Text = "Sale Payment";
             // 
             // customerBalancesToolStripMenuItem
             // 
             this.customerBalancesToolStripMenuItem.Name = "customerBalancesToolStripMenuItem";
-            this.customerBalancesToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.customerBalancesToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.customerBalancesToolStripMenuItem.Text = "Customer Balances";
             // 
             // purchaseToolStripMenuItem
@@ -128,38 +142,44 @@
             this.newPurchaseToolStripMenuItem,
             this.purchasePaymentToolStripMenuItem,
             this.supplierBalancesToolStripMenuItem});
+            this.purchaseToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.purchaseToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.purchaseToolStripMenuItem.Name = "purchaseToolStripMenuItem";
-            this.purchaseToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.purchaseToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.purchaseToolStripMenuItem.Text = "Purchase";
             // 
             // newPurchaseToolStripMenuItem
             // 
             this.newPurchaseToolStripMenuItem.Name = "newPurchaseToolStripMenuItem";
-            this.newPurchaseToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.newPurchaseToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.newPurchaseToolStripMenuItem.Text = "New Purchase";
             // 
             // purchasePaymentToolStripMenuItem
             // 
             this.purchasePaymentToolStripMenuItem.Name = "purchasePaymentToolStripMenuItem";
-            this.purchasePaymentToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.purchasePaymentToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.purchasePaymentToolStripMenuItem.Text = "Purchase Payment";
             // 
             // supplierBalancesToolStripMenuItem
             // 
             this.supplierBalancesToolStripMenuItem.Name = "supplierBalancesToolStripMenuItem";
-            this.supplierBalancesToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.supplierBalancesToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.supplierBalancesToolStripMenuItem.Text = "Supplier Balances";
             // 
             // customersToolStripMenuItem
             // 
+            this.customersToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customersToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
-            this.customersToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.customersToolStripMenuItem.Text = "Customers";
             // 
             // suppliersToolStripMenuItem
             // 
+            this.suppliersToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suppliersToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.suppliersToolStripMenuItem.Name = "suppliersToolStripMenuItem";
-            this.suppliersToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.suppliersToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.suppliersToolStripMenuItem.Text = "Suppliers";
             // 
             // stockToolStripMenuItem
@@ -168,26 +188,29 @@
             this.categoryToolStripMenuItem,
             this.productsToolStripMenuItem,
             this.stockReportsToolStripMenuItem});
+            this.stockToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.stockToolStripMenuItem.Text = "Stock";
             // 
             // categoryToolStripMenuItem
             // 
             this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
-            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.categoryToolStripMenuItem.Text = "Category";
+            this.categoryToolStripMenuItem.Click += new System.EventHandler(this.categoryToolStripMenuItem_Click);
             // 
             // productsToolStripMenuItem
             // 
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.productsToolStripMenuItem.Text = "Products";
             // 
             // stockReportsToolStripMenuItem
             // 
             this.stockReportsToolStripMenuItem.Name = "stockReportsToolStripMenuItem";
-            this.stockReportsToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.stockReportsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stockReportsToolStripMenuItem.Text = "Stock Reports";
             // 
             // reportsToolStripMenuItem
@@ -203,66 +226,77 @@
             this.customerBalancesReportToolStripMenuItem,
             this.customerBalancesReportToolStripMenuItem1,
             this.supplierBalancesReportToolStripMenuItem});
+            this.reportsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
             // 
             // dailySalesReportToolStripMenuItem
             // 
             this.dailySalesReportToolStripMenuItem.Name = "dailySalesReportToolStripMenuItem";
-            this.dailySalesReportToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.dailySalesReportToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.dailySalesReportToolStripMenuItem.Text = "Daily Sales Report";
             // 
             // dailyPurchaseReportToolStripMenuItem
             // 
             this.dailyPurchaseReportToolStripMenuItem.Name = "dailyPurchaseReportToolStripMenuItem";
-            this.dailyPurchaseReportToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.dailyPurchaseReportToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.dailyPurchaseReportToolStripMenuItem.Text = "Daily Purchase Report";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(210, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(218, 6);
             // 
             // customerPurhcaseReportToolStripMenuItem
             // 
             this.customerPurhcaseReportToolStripMenuItem.Name = "customerPurhcaseReportToolStripMenuItem";
-            this.customerPurhcaseReportToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.customerPurhcaseReportToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.customerPurhcaseReportToolStripMenuItem.Text = "Custom Purchase Report";
             // 
             // customSalesReportToolStripMenuItem
             // 
             this.customSalesReportToolStripMenuItem.Name = "customSalesReportToolStripMenuItem";
-            this.customSalesReportToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.customSalesReportToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.customSalesReportToolStripMenuItem.Text = "Custom Sales Report";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(210, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(218, 6);
             // 
             // stockReportToolStripMenuItem
             // 
             this.stockReportToolStripMenuItem.Name = "stockReportToolStripMenuItem";
-            this.stockReportToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.stockReportToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.stockReportToolStripMenuItem.Text = "Stock Report";
             // 
             // customerBalancesReportToolStripMenuItem
             // 
             this.customerBalancesReportToolStripMenuItem.Name = "customerBalancesReportToolStripMenuItem";
-            this.customerBalancesReportToolStripMenuItem.Size = new System.Drawing.Size(210, 6);
+            this.customerBalancesReportToolStripMenuItem.Size = new System.Drawing.Size(218, 6);
             // 
             // customerBalancesReportToolStripMenuItem1
             // 
             this.customerBalancesReportToolStripMenuItem1.Name = "customerBalancesReportToolStripMenuItem1";
-            this.customerBalancesReportToolStripMenuItem1.Size = new System.Drawing.Size(213, 22);
+            this.customerBalancesReportToolStripMenuItem1.Size = new System.Drawing.Size(221, 22);
             this.customerBalancesReportToolStripMenuItem1.Text = "Customer Balances Report";
             // 
             // supplierBalancesReportToolStripMenuItem
             // 
             this.supplierBalancesReportToolStripMenuItem.Name = "supplierBalancesReportToolStripMenuItem";
-            this.supplierBalancesReportToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.supplierBalancesReportToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.supplierBalancesReportToolStripMenuItem.Text = "Supplier Balances Report";
+            // 
+            // logInToolStripMenuItem
+            // 
+            this.logInToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.logInToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logInToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.logInToolStripMenuItem.Name = "logInToolStripMenuItem";
+            this.logInToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.logInToolStripMenuItem.Text = "Log In";
             // 
             // statusStrip1
             // 
@@ -275,7 +309,7 @@
             this.tsslabelDateTime});
             this.statusStrip1.Location = new System.Drawing.Point(0, 449);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(996, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1017, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -312,82 +346,178 @@
             // tsslabelDateTime
             // 
             this.tsslabelDateTime.Name = "tsslabelDateTime";
-            this.tsslabelDateTime.Size = new System.Drawing.Size(685, 17);
+            this.tsslabelDateTime.Size = new System.Drawing.Size(706, 17);
             this.tsslabelDateTime.Spring = true;
             this.tsslabelDateTime.Text = "toolStripStatusLabel6";
             this.tsslabelDateTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // button1
+            // btnNewSale
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(424, 84);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
-            this.button1.Size = new System.Drawing.Size(122, 45);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNewSale.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNewSale.BackColor = System.Drawing.Color.Gray;
+            this.btnNewSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewSale.ForeColor = System.Drawing.Color.White;
+            this.btnNewSale.Location = new System.Drawing.Point(375, 90);
+            this.btnNewSale.Name = "btnNewSale";
+            this.btnNewSale.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
+            this.btnNewSale.Size = new System.Drawing.Size(122, 45);
+            this.btnNewSale.TabIndex = 2;
+            this.btnNewSale.Text = "New Sale";
+            this.btnNewSale.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnSalePayment
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(344, 135);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
-            this.button2.Size = new System.Drawing.Size(122, 45);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button1";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSalePayment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSalePayment.BackColor = System.Drawing.Color.Gray;
+            this.btnSalePayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalePayment.ForeColor = System.Drawing.Color.White;
+            this.btnSalePayment.Location = new System.Drawing.Point(295, 141);
+            this.btnSalePayment.Name = "btnSalePayment";
+            this.btnSalePayment.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
+            this.btnSalePayment.Size = new System.Drawing.Size(122, 45);
+            this.btnSalePayment.TabIndex = 2;
+            this.btnSalePayment.Text = "Sale Payment";
+            this.btnSalePayment.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnCustomerBalance
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(282, 207);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
-            this.button3.Size = new System.Drawing.Size(122, 45);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button1";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCustomerBalance.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCustomerBalance.BackColor = System.Drawing.Color.Gray;
+            this.btnCustomerBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomerBalance.ForeColor = System.Drawing.Color.White;
+            this.btnCustomerBalance.Location = new System.Drawing.Point(246, 192);
+            this.btnCustomerBalance.Name = "btnCustomerBalance";
+            this.btnCustomerBalance.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
+            this.btnCustomerBalance.Size = new System.Drawing.Size(122, 45);
+            this.btnCustomerBalance.TabIndex = 2;
+            this.btnCustomerBalance.Text = "CustomerBalances";
+            this.btnCustomerBalance.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnNewPurchase
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(582, 84);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
-            this.button4.Size = new System.Drawing.Size(122, 45);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "button1";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnNewPurchase.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNewPurchase.BackColor = System.Drawing.Color.Gray;
+            this.btnNewPurchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewPurchase.ForeColor = System.Drawing.Color.White;
+            this.btnNewPurchase.Location = new System.Drawing.Point(533, 90);
+            this.btnNewPurchase.Name = "btnNewPurchase";
+            this.btnNewPurchase.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
+            this.btnNewPurchase.Size = new System.Drawing.Size(122, 45);
+            this.btnNewPurchase.TabIndex = 2;
+            this.btnNewPurchase.Text = "New Purchase";
+            this.btnNewPurchase.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnPurchasePayment
             // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(665, 135);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
-            this.button5.Size = new System.Drawing.Size(122, 45);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "button1";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnPurchasePayment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPurchasePayment.BackColor = System.Drawing.Color.Gray;
+            this.btnPurchasePayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPurchasePayment.ForeColor = System.Drawing.Color.White;
+            this.btnPurchasePayment.Location = new System.Drawing.Point(616, 141);
+            this.btnPurchasePayment.Name = "btnPurchasePayment";
+            this.btnPurchasePayment.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
+            this.btnPurchasePayment.Size = new System.Drawing.Size(122, 45);
+            this.btnPurchasePayment.TabIndex = 2;
+            this.btnPurchasePayment.Text = "Purchase Payment";
+            this.btnPurchasePayment.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btnSupplierBalance
             // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(730, 207);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
-            this.button6.Size = new System.Drawing.Size(122, 45);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "button1";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnSupplierBalance.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSupplierBalance.BackColor = System.Drawing.Color.Gray;
+            this.btnSupplierBalance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSupplierBalance.ForeColor = System.Drawing.Color.White;
+            this.btnSupplierBalance.Location = new System.Drawing.Point(671, 192);
+            this.btnSupplierBalance.Name = "btnSupplierBalance";
+            this.btnSupplierBalance.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
+            this.btnSupplierBalance.Size = new System.Drawing.Size(122, 45);
+            this.btnSupplierBalance.TabIndex = 2;
+            this.btnSupplierBalance.Text = "Supplier Balance";
+            this.btnSupplierBalance.UseVisualStyleBackColor = false;
+            // 
+            // btnDailySaleReport
+            // 
+            this.btnDailySaleReport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDailySaleReport.BackColor = System.Drawing.Color.Gray;
+            this.btnDailySaleReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDailySaleReport.ForeColor = System.Drawing.Color.White;
+            this.btnDailySaleReport.Location = new System.Drawing.Point(295, 255);
+            this.btnDailySaleReport.Name = "btnDailySaleReport";
+            this.btnDailySaleReport.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
+            this.btnDailySaleReport.Size = new System.Drawing.Size(122, 45);
+            this.btnDailySaleReport.TabIndex = 2;
+            this.btnDailySaleReport.Text = "Daily Sale Report";
+            this.btnDailySaleReport.UseVisualStyleBackColor = false;
+            // 
+            // btnCustomSaleReport
+            // 
+            this.btnCustomSaleReport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCustomSaleReport.BackColor = System.Drawing.Color.Gray;
+            this.btnCustomSaleReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomSaleReport.ForeColor = System.Drawing.Color.White;
+            this.btnCustomSaleReport.Location = new System.Drawing.Point(375, 321);
+            this.btnCustomSaleReport.Name = "btnCustomSaleReport";
+            this.btnCustomSaleReport.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
+            this.btnCustomSaleReport.Size = new System.Drawing.Size(134, 45);
+            this.btnCustomSaleReport.TabIndex = 2;
+            this.btnCustomSaleReport.Text = "Custom Sale Report";
+            this.btnCustomSaleReport.UseVisualStyleBackColor = false;
+            // 
+            // btnDailyPurchaseReport
+            // 
+            this.btnDailyPurchaseReport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDailyPurchaseReport.BackColor = System.Drawing.Color.Gray;
+            this.btnDailyPurchaseReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDailyPurchaseReport.ForeColor = System.Drawing.Color.White;
+            this.btnDailyPurchaseReport.Location = new System.Drawing.Point(616, 255);
+            this.btnDailyPurchaseReport.Name = "btnDailyPurchaseReport";
+            this.btnDailyPurchaseReport.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
+            this.btnDailyPurchaseReport.Size = new System.Drawing.Size(122, 45);
+            this.btnDailyPurchaseReport.TabIndex = 2;
+            this.btnDailyPurchaseReport.Text = "Daily Purchase Report";
+            this.btnDailyPurchaseReport.UseVisualStyleBackColor = false;
+            // 
+            // btnCustomPurchaseReport
+            // 
+            this.btnCustomPurchaseReport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCustomPurchaseReport.BackColor = System.Drawing.Color.Gray;
+            this.btnCustomPurchaseReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomPurchaseReport.ForeColor = System.Drawing.Color.White;
+            this.btnCustomPurchaseReport.Location = new System.Drawing.Point(533, 321);
+            this.btnCustomPurchaseReport.Name = "btnCustomPurchaseReport";
+            this.btnCustomPurchaseReport.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
+            this.btnCustomPurchaseReport.Size = new System.Drawing.Size(151, 45);
+            this.btnCustomPurchaseReport.TabIndex = 2;
+            this.btnCustomPurchaseReport.Text = "Custom Purchase Report";
+            this.btnCustomPurchaseReport.UseVisualStyleBackColor = false;
+            // 
+            // btnStock
+            // 
+            this.btnStock.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnStock.BackColor = System.Drawing.Color.Gray;
+            this.btnStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStock.ForeColor = System.Drawing.Color.White;
+            this.btnStock.Location = new System.Drawing.Point(450, 39);
+            this.btnStock.Name = "btnStock";
+            this.btnStock.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
+            this.btnStock.Size = new System.Drawing.Size(122, 45);
+            this.btnStock.TabIndex = 2;
+            this.btnStock.Text = "Stock";
+            this.btnStock.UseVisualStyleBackColor = false;
+            // 
+            // btnStockReport
+            // 
+            this.btnStockReport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnStockReport.BackColor = System.Drawing.Color.Gray;
+            this.btnStockReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStockReport.ForeColor = System.Drawing.Color.White;
+            this.btnStockReport.Location = new System.Drawing.Point(450, 381);
+            this.btnStockReport.Name = "btnStockReport";
+            this.btnStockReport.Padding = new System.Windows.Forms.Padding(12, 8, 0, 8);
+            this.btnStockReport.Size = new System.Drawing.Size(122, 45);
+            this.btnStockReport.TabIndex = 2;
+            this.btnStockReport.Text = "Stock Report";
+            this.btnStockReport.UseVisualStyleBackColor = false;
             // 
             // FrmInventorySystem
             // 
@@ -395,15 +525,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InventorySystem.Properties.Resources.Inventory;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(996, 471);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1017, 471);
+            this.Controls.Add(this.btnCustomPurchaseReport);
+            this.Controls.Add(this.btnSupplierBalance);
+            this.Controls.Add(this.btnDailyPurchaseReport);
+            this.Controls.Add(this.btnPurchasePayment);
+            this.Controls.Add(this.btnCustomSaleReport);
+            this.Controls.Add(this.btnCustomerBalance);
+            this.Controls.Add(this.btnNewPurchase);
+            this.Controls.Add(this.btnDailySaleReport);
+            this.Controls.Add(this.btnSalePayment);
+            this.Controls.Add(this.btnStockReport);
+            this.Controls.Add(this.btnStock);
+            this.Controls.Add(this.btnNewSale);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.ForeColor = System.Drawing.Color.Black;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmInventorySystem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -456,11 +593,18 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
         private System.Windows.Forms.ToolStripStatusLabel tsslabelDateTime;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnNewSale;
+        private System.Windows.Forms.Button btnSalePayment;
+        private System.Windows.Forms.Button btnCustomerBalance;
+        private System.Windows.Forms.Button btnNewPurchase;
+        private System.Windows.Forms.Button btnPurchasePayment;
+        private System.Windows.Forms.Button btnSupplierBalance;
+        private System.Windows.Forms.Button btnDailySaleReport;
+        private System.Windows.Forms.Button btnCustomSaleReport;
+        private System.Windows.Forms.Button btnDailyPurchaseReport;
+        private System.Windows.Forms.Button btnCustomPurchaseReport;
+        private System.Windows.Forms.Button btnStock;
+        private System.Windows.Forms.Button btnStockReport;
+        private System.Windows.Forms.ToolStripMenuItem logInToolStripMenuItem;
     }
 }
