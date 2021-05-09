@@ -30,25 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCategory = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtCategory = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dgvCategoryList = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtSearchCategory = new System.Windows.Forms.TextBox();
-            this.epCategory = new System.Windows.Forms.ErrorProvider(this.components);
             this.ColCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.epCategory = new System.Windows.Forms.ErrorProvider(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoryList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epCategory)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -64,14 +67,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Category Info";
             // 
-            // label1
+            // txtDescription
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Enter Category";
+            this.txtDescription.Location = new System.Drawing.Point(142, 80);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(171, 56);
+            this.txtDescription.TabIndex = 1;
+            // 
+            // txtCategory
+            // 
+            this.txtCategory.Location = new System.Drawing.Point(142, 39);
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.Size = new System.Drawing.Size(171, 20);
+            this.txtCategory.TabIndex = 1;
             // 
             // label2
             // 
@@ -82,20 +91,14 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Enter Description";
             // 
-            // txtCategory
+            // label1
             // 
-            this.txtCategory.Location = new System.Drawing.Point(142, 39);
-            this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(171, 20);
-            this.txtCategory.TabIndex = 1;
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(142, 80);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(171, 56);
-            this.txtDescription.TabIndex = 1;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(43, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Enter Category";
             // 
             // btnEdit
             // 
@@ -105,24 +108,29 @@
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Enabled = false;
             this.btnUpdate.Location = new System.Drawing.Point(489, 173);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 1;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.Enabled = false;
             this.btnCancel.Location = new System.Drawing.Point(570, 173);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnClear
             // 
@@ -132,6 +140,7 @@
             this.btnClear.TabIndex = 1;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSave
             // 
@@ -145,15 +154,39 @@
             // 
             // dgvCategoryList
             // 
+            this.dgvCategoryList.AllowUserToAddRows = false;
             this.dgvCategoryList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategoryList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColCategoryID,
             this.colCategoryName,
             this.colDescription});
+            this.dgvCategoryList.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvCategoryList.Location = new System.Drawing.Point(39, 242);
+            this.dgvCategoryList.MultiSelect = false;
             this.dgvCategoryList.Name = "dgvCategoryList";
+            this.dgvCategoryList.ReadOnly = true;
+            this.dgvCategoryList.RowHeadersVisible = false;
+            this.dgvCategoryList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCategoryList.Size = new System.Drawing.Size(727, 150);
             this.dgvCategoryList.TabIndex = 2;
+            // 
+            // ColCategoryID
+            // 
+            this.ColCategoryID.HeaderText = "ID";
+            this.ColCategoryID.Name = "ColCategoryID";
+            this.ColCategoryID.ReadOnly = true;
+            // 
+            // colCategoryName
+            // 
+            this.colCategoryName.HeaderText = "Category Name";
+            this.colCategoryName.Name = "colCategoryName";
+            this.colCategoryName.ReadOnly = true;
+            // 
+            // colDescription
+            // 
+            this.colDescription.HeaderText = "Description";
+            this.colDescription.Name = "colDescription";
+            this.colDescription.ReadOnly = true;
             // 
             // label3
             // 
@@ -164,31 +197,31 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Search Category";
             // 
-            // txtSearchCategory
+            // txtSearch
             // 
-            this.txtSearchCategory.Location = new System.Drawing.Point(139, 209);
-            this.txtSearchCategory.Name = "txtSearchCategory";
-            this.txtSearchCategory.Size = new System.Drawing.Size(171, 20);
-            this.txtSearchCategory.TabIndex = 1;
+            this.txtSearch.Location = new System.Drawing.Point(139, 209);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(171, 20);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearchCategory_TextChanged);
             // 
             // epCategory
             // 
             this.epCategory.ContainerControl = this;
             // 
-            // ColCategoryID
+            // contextMenuStrip1
             // 
-            this.ColCategoryID.HeaderText = "ID";
-            this.ColCategoryID.Name = "ColCategoryID";
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
             // 
-            // colCategoryName
+            // deleteToolStripMenuItem
             // 
-            this.colCategoryName.HeaderText = "Category Name";
-            this.colCategoryName.Name = "colCategoryName";
-            // 
-            // colDescription
-            // 
-            this.colDescription.HeaderText = "Description";
-            this.colDescription.Name = "colDescription";
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // frmCategory
             // 
@@ -196,7 +229,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvCategoryList);
-            this.Controls.Add(this.txtSearchCategory);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label3);
@@ -212,6 +245,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoryList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epCategory)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,10 +265,12 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DataGridView dgvCategoryList;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtSearchCategory;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCategoryID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCategoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
         private System.Windows.Forms.ErrorProvider epCategory;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }
