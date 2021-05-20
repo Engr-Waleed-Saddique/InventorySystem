@@ -28,5 +28,11 @@ namespace InventorySystem.AllForms
             frmCategory frm = new frmCategory();
             frm.ShowDialog();
         }
+
+        private void productsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProducts frm = new frmProducts();
+            frm.ShowDialog();
+        }
     }
 }
