@@ -36,6 +36,14 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.dgvProductList = new System.Windows.Forms.DataGridView();
+            this.ColCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColQuality = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -53,14 +61,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.ColCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColQuality = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExportStock = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.epProducts)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).BeginInit();
@@ -137,6 +138,54 @@
             this.dgvProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductList.Size = new System.Drawing.Size(1033, 150);
             this.dgvProductList.TabIndex = 7;
+            // 
+            // ColCategoryID
+            // 
+            this.ColCategoryID.HeaderText = "ID";
+            this.ColCategoryID.Name = "ColCategoryID";
+            this.ColCategoryID.ReadOnly = true;
+            // 
+            // ColProductName
+            // 
+            this.ColProductName.HeaderText = "Name";
+            this.ColProductName.Name = "ColProductName";
+            this.ColProductName.ReadOnly = true;
+            // 
+            // colCategoryName
+            // 
+            this.colCategoryName.HeaderText = "Category Name";
+            this.colCategoryName.Name = "colCategoryName";
+            this.colCategoryName.ReadOnly = true;
+            // 
+            // ColUnitPrice
+            // 
+            this.ColUnitPrice.HeaderText = "Unit Price";
+            this.ColUnitPrice.Name = "ColUnitPrice";
+            this.ColUnitPrice.ReadOnly = true;
+            // 
+            // ColQuantity
+            // 
+            this.ColQuantity.HeaderText = "Quantity";
+            this.ColQuantity.Name = "ColQuantity";
+            this.ColQuantity.ReadOnly = true;
+            // 
+            // ItemCost
+            // 
+            this.ItemCost.HeaderText = "Item Cost";
+            this.ItemCost.Name = "ItemCost";
+            this.ItemCost.ReadOnly = true;
+            // 
+            // ColQuality
+            // 
+            this.ColQuality.HeaderText = "Quality";
+            this.ColQuality.Name = "ColQuality";
+            this.ColQuality.ReadOnly = true;
+            // 
+            // colDescription
+            // 
+            this.colDescription.HeaderText = "Description";
+            this.colDescription.Name = "colDescription";
+            this.colDescription.ReadOnly = true;
             // 
             // txtSearch
             // 
@@ -296,59 +345,22 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Select Category";
             // 
-            // ColCategoryID
+            // btnExportStock
             // 
-            this.ColCategoryID.HeaderText = "ID";
-            this.ColCategoryID.Name = "ColCategoryID";
-            this.ColCategoryID.ReadOnly = true;
-            // 
-            // ColProductName
-            // 
-            this.ColProductName.HeaderText = "Name";
-            this.ColProductName.Name = "ColProductName";
-            this.ColProductName.ReadOnly = true;
-            // 
-            // colCategoryName
-            // 
-            this.colCategoryName.HeaderText = "Category Name";
-            this.colCategoryName.Name = "colCategoryName";
-            this.colCategoryName.ReadOnly = true;
-            // 
-            // ColUnitPrice
-            // 
-            this.ColUnitPrice.HeaderText = "Unit Price";
-            this.ColUnitPrice.Name = "ColUnitPrice";
-            this.ColUnitPrice.ReadOnly = true;
-            // 
-            // ColQuantity
-            // 
-            this.ColQuantity.HeaderText = "Quantity";
-            this.ColQuantity.Name = "ColQuantity";
-            this.ColQuantity.ReadOnly = true;
-            // 
-            // ItemCost
-            // 
-            this.ItemCost.HeaderText = "Item Cost";
-            this.ItemCost.Name = "ItemCost";
-            this.ItemCost.ReadOnly = true;
-            // 
-            // ColQuality
-            // 
-            this.ColQuality.HeaderText = "Quality";
-            this.ColQuality.Name = "ColQuality";
-            this.ColQuality.ReadOnly = true;
-            // 
-            // colDescription
-            // 
-            this.colDescription.HeaderText = "Description";
-            this.colDescription.Name = "colDescription";
-            this.colDescription.ReadOnly = true;
+            this.btnExportStock.Location = new System.Drawing.Point(926, 226);
+            this.btnExportStock.Name = "btnExportStock";
+            this.btnExportStock.Size = new System.Drawing.Size(117, 23);
+            this.btnExportStock.TabIndex = 8;
+            this.btnExportStock.Text = "Export Stock";
+            this.btnExportStock.UseVisualStyleBackColor = true;
+            this.btnExportStock.Click += new System.EventHandler(this.btnExportStock_Click);
             // 
             // frmProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 530);
+            this.Controls.Add(this.btnExportStock);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnUpdate);
@@ -406,5 +418,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemCost;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColQuality;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
+        private System.Windows.Forms.Button btnExportStock;
     }
 }

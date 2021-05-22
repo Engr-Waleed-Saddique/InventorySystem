@@ -221,5 +221,11 @@ namespace InventorySystem.AllForms.StockForms
             FormClear();
             DisableComponent();
         }
+
+        private void btnExportStock_Click(object sender, EventArgs e)
+        {
+            frmStockReport frm = new frmStockReport();
+            frm.ShowDialog();
+        }
     }
 }

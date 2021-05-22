@@ -34,5 +34,29 @@ namespace InventorySystem.AllForms
             frmProducts frm = new frmProducts();
             frm.ShowDialog();
         }
+
+        private void stockReportsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmStockReport frm = new frmStockReport();
+            frm.ShowDialog();
+        }
+
+        private void btnStockReport_Click(object sender, EventArgs e)
+        {
+            frmStockReport frm = new frmStockReport();
+            frm.ShowDialog();
+        }
+
+        private void stockReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmStockReport frm = new frmStockReport();
+            frm.ShowDialog();
+        }
+
+        private void btnStock_Click(object sender, EventArgs e)
+        {
+            frmProducts frm = new frmProducts();
+            frm.ShowDialog();
+        }
     }
 }

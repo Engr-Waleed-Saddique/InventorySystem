@@ -213,6 +213,7 @@
             this.stockReportsToolStripMenuItem.Name = "stockReportsToolStripMenuItem";
             this.stockReportsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stockReportsToolStripMenuItem.Text = "Stock Reports";
+            this.stockReportsToolStripMenuItem.Click += new System.EventHandler(this.stockReportsToolStripMenuItem_Click);
             // 
             // reportsToolStripMenuItem
             // 
@@ -272,6 +273,7 @@
             this.stockReportToolStripMenuItem.Name = "stockReportToolStripMenuItem";
             this.stockReportToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.stockReportToolStripMenuItem.Text = "Stock Report";
+            this.stockReportToolStripMenuItem.Click += new System.EventHandler(this.stockReportToolStripMenuItem_Click);
             // 
             // customerBalancesReportToolStripMenuItem
             // 
@@ -505,6 +507,7 @@
             this.btnStock.TabIndex = 2;
             this.btnStock.Text = "Stock";
             this.btnStock.UseVisualStyleBackColor = false;
+            this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
             // 
             // btnStockReport
             // 
@@ -519,6 +522,7 @@
             this.btnStockReport.TabIndex = 2;
             this.btnStockReport.Text = "Stock Report";
             this.btnStockReport.UseVisualStyleBackColor = false;
+            this.btnStockReport.Click += new System.EventHandler(this.btnStockReport_Click);
             // 
             // FrmInventorySystem
             // 
