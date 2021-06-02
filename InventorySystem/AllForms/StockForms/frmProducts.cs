@@ -34,7 +34,7 @@ namespace InventorySystem.AllForms.StockForms
             txtProductName.Clear();
             txtUnitprice.Clear();
             txtQuantity.Clear();
-            txtQuality.Clear();
+            cmbQuality.SelectedIndex=2;
             txtDescription.Clear();
             FillGrid("");
         }
@@ -98,9 +98,9 @@ namespace InventorySystem.AllForms.StockForms
                 txtQuantity.Focus();
                 return;
             }
-            if (txtQuality.Text.Trim().Length == 0)
+            if (cmbQuality.SelectedIndex == 0)
             {
-                epProducts.SetError(txtQuality, "Please Enter Product Quality");
+                epProducts.SetError(cmbQuality, "Please Enter Product Quality");
                 txtQuantity.Focus();
                 return;
             }
@@ -119,7 +119,7 @@ namespace InventorySystem.AllForms.StockForms
             dt = DBL.RetrieveData("Select CategoryID from Categories where Name='" + cmbCategoryList.Text + "'");
             categoryid = Convert.ToString(dt.Rows[0][0]);
             string insertProduct = string.Format("update Products set CategoryId='{0}',Name='{1}',UnitPrice='{2}',Quantity='{3}',Quality='{4}',[Description]='{5}' where ProductID='"+updateProductID.Trim()+"'",
-                categoryid, txtProductName.Text.Trim(), txtUnitprice.Text.Trim(), txtQuantity.Text.Trim(), txtQuality.Text.Trim(), txtDescription.Text.Trim());
+                categoryid, txtProductName.Text.Trim(), txtUnitprice.Text.Trim(), txtQuantity.Text.Trim(), cmbQuality.Text.Trim(), txtDescription.Text.Trim());
             DBL.InsertData(insertProduct);
             MessageBox.Show("Product Updated Successully");
             //FormClear();
@@ -152,9 +152,9 @@ namespace InventorySystem.AllForms.StockForms
                 txtQuantity.Focus();
                 return;
             }
-            if (txtQuality.Text.Trim().Length == 0)
+            if (cmbQuality.SelectedIndex == 0)
             {
-                epProducts.SetError(txtQuality, "Please Enter Product Quality");
+                epProducts.SetError(cmbQuality, "Please Enter Product Quality");
                 txtQuantity.Focus();
                 return;
             }
@@ -163,7 +163,7 @@ namespace InventorySystem.AllForms.StockForms
             dt = DBL.RetrieveData("Select CategoryID from Categories where Name='"+cmbCategoryList.Text+"'");
             categoryid = Convert.ToString(dt.Rows[0][0]);
             string insertProduct = string.Format("insert into Products(CategoryId,Name,UnitPrice,Quantity,Quality,[Description]) values('{0}','{1}','{2}','{3}','{4}','{5}')",
-                categoryid,txtProductName.Text.Trim(),txtUnitprice.Text.Trim(),txtQuantity.Text.Trim(), txtQuality.Text.Trim(), txtDescription.Text.Trim());
+                categoryid,txtProductName.Text.Trim(),txtUnitprice.Text.Trim(),txtQuantity.Text.Trim(), cmbQuality.Text.Trim(), txtDescription.Text.Trim());
             DBL.InsertData(insertProduct);
             MessageBox.Show("Product Added Successully");
             FillGrid("");
@@ -183,7 +183,7 @@ namespace InventorySystem.AllForms.StockForms
                     cmbCategoryList.Text= Convert.ToString(dgvProductList.CurrentRow.Cells[2].Value);
                     txtUnitprice.Text= Convert.ToString(dgvProductList.CurrentRow.Cells[3].Value);
                     txtQuantity.Text= Convert.ToString(dgvProductList.CurrentRow.Cells[4].Value);
-                    txtQuality.Text= Convert.ToString(dgvProductList.CurrentRow.Cells[6].Value);
+                    cmbQuality.Text= Convert.ToString(dgvProductList.CurrentRow.Cells[6].Value);
                     txtDescription.Text = Convert.ToString(dgvProductList.CurrentRow.Cells[7].Value);
                     EnableComponent();
                     return;
@@ -207,6 +207,7 @@ namespace InventorySystem.AllForms.StockForms
         {
             ComboBoxList.CategoryList(cmbCategoryList);
             setColumnsWidth();
+            cmbQuality.SelectedIndex = 2;
             FillGrid("");
         }
 
@@ -226,6 +227,26 @@ namespace InventorySystem.AllForms.StockForms
         {
             frmStockReport frm = new frmStockReport();
             frm.ShowDialog();
+        }
+
+        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) {
+                e.Handled = true;
+            }
+        }
+
+        private void txtUnitprice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

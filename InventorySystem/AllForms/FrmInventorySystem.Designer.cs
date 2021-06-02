@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInventorySystem));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -151,19 +152,21 @@
             // newPurchaseToolStripMenuItem
             // 
             this.newPurchaseToolStripMenuItem.Name = "newPurchaseToolStripMenuItem";
-            this.newPurchaseToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.newPurchaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newPurchaseToolStripMenuItem.Text = "New Purchase";
+            this.newPurchaseToolStripMenuItem.Click += new System.EventHandler(this.newPurchaseToolStripMenuItem_Click);
             // 
             // purchasePaymentToolStripMenuItem
             // 
             this.purchasePaymentToolStripMenuItem.Name = "purchasePaymentToolStripMenuItem";
-            this.purchasePaymentToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.purchasePaymentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.purchasePaymentToolStripMenuItem.Text = "Purchase Payment";
+            this.purchasePaymentToolStripMenuItem.Click += new System.EventHandler(this.purchasePaymentToolStripMenuItem_Click);
             // 
             // supplierBalancesToolStripMenuItem
             // 
             this.supplierBalancesToolStripMenuItem.Name = "supplierBalancesToolStripMenuItem";
-            this.supplierBalancesToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.supplierBalancesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.supplierBalancesToolStripMenuItem.Text = "Supplier Balances";
             // 
             // customersToolStripMenuItem
@@ -173,6 +176,7 @@
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
             this.customersToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.customersToolStripMenuItem.Text = "Customers";
+            this.customersToolStripMenuItem.Click += new System.EventHandler(this.customersToolStripMenuItem_Click);
             // 
             // suppliersToolStripMenuItem
             // 
@@ -181,6 +185,7 @@
             this.suppliersToolStripMenuItem.Name = "suppliersToolStripMenuItem";
             this.suppliersToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.suppliersToolStripMenuItem.Text = "Suppliers";
+            this.suppliersToolStripMenuItem.Click += new System.EventHandler(this.suppliersToolStripMenuItem_Click);
             // 
             // stockToolStripMenuItem
             // 
@@ -197,21 +202,21 @@
             // categoryToolStripMenuItem
             // 
             this.categoryToolStripMenuItem.Name = "categoryToolStripMenuItem";
-            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.categoryToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.categoryToolStripMenuItem.Text = "Category";
             this.categoryToolStripMenuItem.Click += new System.EventHandler(this.categoryToolStripMenuItem_Click);
             // 
             // productsToolStripMenuItem
             // 
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.productsToolStripMenuItem.Text = "Products";
             this.productsToolStripMenuItem.Click += new System.EventHandler(this.productsToolStripMenuItem_Click);
             // 
             // stockReportsToolStripMenuItem
             // 
             this.stockReportsToolStripMenuItem.Name = "stockReportsToolStripMenuItem";
-            this.stockReportsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stockReportsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.stockReportsToolStripMenuItem.Text = "Stock Reports";
             this.stockReportsToolStripMenuItem.Click += new System.EventHandler(this.stockReportsToolStripMenuItem_Click);
             // 
@@ -528,7 +533,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::InventorySystem.Properties.Resources.Inventory;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1017, 471);
             this.Controls.Add(this.btnCustomPurchaseReport);

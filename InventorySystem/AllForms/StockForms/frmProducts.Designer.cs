@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.epProducts = new System.Windows.Forms.ErrorProvider(this.components);
             this.label3 = new System.Windows.Forms.Label();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.dgvProductList = new System.Windows.Forms.DataGridView();
@@ -53,17 +51,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbQuality = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.cmbCategoryList = new System.Windows.Forms.ComboBox();
             this.txtUnitprice = new System.Windows.Forms.TextBox();
-            this.txtQuality = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnExportStock = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.epProducts)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -80,19 +77,6 @@
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Search Product";
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 26);
             // 
             // btnCancel
             // 
@@ -129,7 +113,6 @@
             this.ItemCost,
             this.ColQuality,
             this.colDescription});
-            this.dgvProductList.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvProductList.Location = new System.Drawing.Point(26, 296);
             this.dgvProductList.MultiSelect = false;
             this.dgvProductList.Name = "dgvProductList";
@@ -260,14 +243,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbQuality);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.cmbCategoryList);
             this.groupBox1.Controls.Add(this.txtDescription);
             this.groupBox1.Controls.Add(this.txtUnitprice);
-            this.groupBox1.Controls.Add(this.txtQuality);
             this.groupBox1.Controls.Add(this.txtQuantity);
             this.groupBox1.Controls.Add(this.txtProductName);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -278,6 +261,29 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Product Info";
+            // 
+            // cmbQuality
+            // 
+            this.cmbQuality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbQuality.FormattingEnabled = true;
+            this.cmbQuality.Items.AddRange(new object[] {
+            "Select Quality",
+            "Low",
+            "Normal",
+            "Best"});
+            this.cmbQuality.Location = new System.Drawing.Point(141, 144);
+            this.cmbQuality.Name = "cmbQuality";
+            this.cmbQuality.Size = new System.Drawing.Size(172, 21);
+            this.cmbQuality.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(43, 147);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 13);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Select Quality";
             // 
             // cmbCategoryList
             // 
@@ -290,17 +296,11 @@
             // 
             // txtUnitprice
             // 
-            this.txtUnitprice.Location = new System.Drawing.Point(142, 144);
+            this.txtUnitprice.Location = new System.Drawing.Point(142, 118);
             this.txtUnitprice.Name = "txtUnitprice";
             this.txtUnitprice.Size = new System.Drawing.Size(171, 20);
             this.txtUnitprice.TabIndex = 3;
-            // 
-            // txtQuality
-            // 
-            this.txtQuality.Location = new System.Drawing.Point(142, 118);
-            this.txtQuality.Name = "txtQuality";
-            this.txtQuality.Size = new System.Drawing.Size(171, 20);
-            this.txtQuality.TabIndex = 3;
+            this.txtUnitprice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnitprice_KeyPress);
             // 
             // txtQuantity
             // 
@@ -308,24 +308,16 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(171, 20);
             this.txtQuantity.TabIndex = 2;
+            this.txtQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantity_KeyPress);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(43, 147);
+            this.label7.Location = new System.Drawing.Point(43, 118);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(31, 13);
             this.label7.TabIndex = 0;
             this.label7.Text = "Price";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(43, 121);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Quality";
             // 
             // label5
             // 
@@ -375,7 +367,6 @@
             this.Text = "Products";
             this.Load += new System.EventHandler(this.frmProducts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.epProducts)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -391,8 +382,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DataGridView dgvProductList;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnEdit;
@@ -400,10 +389,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cmbCategoryList;
         private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.TextBox txtQuality;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.TextBox txtProductName;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -419,5 +406,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColQuality;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
         private System.Windows.Forms.Button btnExportStock;
+        private System.Windows.Forms.ComboBox cmbQuality;
+        private System.Windows.Forms.Label label8;
     }
 }

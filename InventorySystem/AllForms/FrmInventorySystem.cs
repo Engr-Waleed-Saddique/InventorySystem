@@ -1,4 +1,6 @@
-﻿using InventorySystem.AllForms.StockForms;
+﻿using InventorySystem.AllForms.CustomerForms;
+using InventorySystem.AllForms.PurchaseForms;
+using InventorySystem.AllForms.StockForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,6 +58,30 @@ namespace InventorySystem.AllForms
         private void btnStock_Click(object sender, EventArgs e)
         {
             frmProducts frm = new frmProducts();
+            frm.ShowDialog();
+        }
+
+        private void suppliersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSupplier frm = new frmSupplier();
+            frm.ShowDialog();
+        }
+
+        private void customersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCustomer frm = new frmCustomer();
+            frm.ShowDialog();
+        }
+
+        private void newPurchaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPurchase frm = new frmPurchase();
+            frm.ShowDialog();
+        }
+
+        private void purchasePaymentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPurchasePayment frm = new frmPurchasePayment();
             frm.ShowDialog();
         }
     }

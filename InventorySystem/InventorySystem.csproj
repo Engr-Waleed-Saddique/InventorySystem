@@ -52,11 +52,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllForms\CustomerForms\frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\CustomerForms\frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllForms\FrmInventorySystem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AllForms\FrmInventorySystem.Designer.cs">
       <DependentUpon>FrmInventorySystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForms\PurchaseForms\frmPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\PurchaseForms\frmPurchase.Designer.cs">
+      <DependentUpon>frmPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForms\PurchaseForms\frmPurchasePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\PurchaseForms\frmPurchasePayment.Designer.cs">
+      <DependentUpon>frmPurchasePayment.cs</DependentUpon>
     </Compile>
     <Compile Include="AllForms\StockForms\frmCategory.cs">
       <SubType>Form</SubType>
@@ -76,6 +94,12 @@
     <Compile Include="AllForms\StockForms\frmStockReport.Designer.cs">
       <DependentUpon>frmStockReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllForms\PurchaseForms\frmSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\PurchaseForms\frmSupplier.Designer.cs">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllReports\rptStock.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -86,8 +110,17 @@
     <Compile Include="DatabaseLayer\DBL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AllForms\CustomerForms\frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AllForms\FrmInventorySystem.resx">
       <DependentUpon>FrmInventorySystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\PurchaseForms\frmPurchase.resx">
+      <DependentUpon>frmPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\PurchaseForms\frmPurchasePayment.resx">
+      <DependentUpon>frmPurchasePayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\StockForms\frmCategory.resx">
       <DependentUpon>frmCategory.cs</DependentUpon>
@@ -97,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\StockForms\frmStockReport.resx">
       <DependentUpon>frmStockReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\PurchaseForms\frmSupplier.resx">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AllReports\rptStock.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

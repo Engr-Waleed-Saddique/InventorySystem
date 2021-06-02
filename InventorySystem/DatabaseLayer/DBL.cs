@@ -63,5 +63,21 @@ namespace InventorySystem.DatabaseLayer
                 return null;
             }
         }
+        public static void NewPurchase(int supplierId,int PurchaseId,int ProductId,string productName,int categoryID,string categoryName,float PurchaseQuantity,float PurchaseUnitPrice,float saleUnitPrice,string quality) {
+
+            SqlCommand cmd = new SqlCommand("NewPurchase",ConnOpen());
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@supplierId",supplierId );
+            cmd.Parameters.AddWithValue("@purchaseId", PurchaseId);
+            cmd.Parameters.AddWithValue("@productId", ProductId);
+            cmd.Parameters.AddWithValue("@productName", productName);
+            cmd.Parameters.AddWithValue("@categoryId", categoryID);
+            cmd.Parameters.AddWithValue("@categoryName", categoryName);
+            cmd.Parameters.AddWithValue("@purchaseQuantity", PurchaseQuantity);
+            cmd.Parameters.AddWithValue("@purchaseUnitPrice", PurchaseUnitPrice);
+            cmd.Parameters.AddWithValue("@saleUnitPrice", saleUnitPrice);
+            cmd.Parameters.AddWithValue("@Quality",quality );
+            cmd.ExecuteNonQuery();
+        }
     }
 }
