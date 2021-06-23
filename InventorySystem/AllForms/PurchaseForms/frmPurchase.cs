@@ -1,4 +1,5 @@
-﻿using InventorySystem.Code;
+﻿using InventorySystem.AllForms.Receipt_Forms;
+using InventorySystem.Code;
 using InventorySystem.DatabaseLayer;
 using System;
 using System.Collections.Generic;
@@ -606,7 +607,14 @@ namespace InventorySystem.AllForms.PurchaseForms
 
                 }
             }
+            DataTable dt3 = new DataTable();
+            dt3 = DBL.RetrieveData("Select Max(PurchaseID) from Purchases");
+            if (dt3.Rows.Count == 1) {
+                frmPurchaseDetailReport frm = new frmPurchaseDetailReport(Convert.ToString(dt3.Rows[0][0]).Trim());
+                frm.ShowDialog();
+            }
             NewPurchase();
+            MessageBox.Show("Purchase Successfully");
         }
     }
     }

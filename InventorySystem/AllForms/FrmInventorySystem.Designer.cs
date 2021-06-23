@@ -168,6 +168,7 @@
             this.supplierBalancesToolStripMenuItem.Name = "supplierBalancesToolStripMenuItem";
             this.supplierBalancesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.supplierBalancesToolStripMenuItem.Text = "Supplier Balances";
+            this.supplierBalancesToolStripMenuItem.Click += new System.EventHandler(this.supplierBalancesToolStripMenuItem_Click);
             // 
             // customersToolStripMenuItem
             // 

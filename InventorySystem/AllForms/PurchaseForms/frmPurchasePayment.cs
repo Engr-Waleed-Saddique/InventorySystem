@@ -1,4 +1,5 @@
-﻿using InventorySystem.DatabaseLayer;
+﻿using InventorySystem.AllForms.Receipt_Forms;
+using InventorySystem.DatabaseLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -228,6 +229,48 @@ namespace InventorySystem.AllForms.PurchaseForms
             }
             else {
                 dgvPaymentDetail.DataSource = null;
+            }
+        }
+
+        private void printReciptToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvPaymentDetail.Rows.Count > 0)
+            {
+                if (dgvPaymentDetail.SelectedRows.Count == 1)
+                {
+                    frmReceiptPayment frm = new frmReceiptPayment(Convert.ToString(dgvPaymentDetail.CurrentRow.Cells[0].Value).Trim());
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Please Select One Record");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("List is empty!");
+            }
+        }
+
+        private void purchaseInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvAllPurchases.Rows.Count > 0)
+            {
+                if (dgvAllPurchases.SelectedRows.Count == 1)
+                {
+                    frmPurchaseDetailReport frm = new frmPurchaseDetailReport(Convert.ToString(dgvAllPurchases.CurrentRow.Cells[0].Value).Trim());
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Please Select One Record");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("List is empty!");
             }
         }
     }

@@ -76,6 +76,18 @@
     <Compile Include="AllForms\PurchaseForms\frmPurchasePayment.Designer.cs">
       <DependentUpon>frmPurchasePayment.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllForms\Receipt Forms\frmPurchaseDetailReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\Receipt Forms\frmPurchaseDetailReport.Designer.cs">
+      <DependentUpon>frmPurchaseDetailReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllForms\Receipt Forms\frmReceiptPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\Receipt Forms\frmReceiptPayment.Designer.cs">
+      <DependentUpon>frmReceiptPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="AllForms\StockForms\frmCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +112,24 @@
     <Compile Include="AllForms\PurchaseForms\frmSupplier.Designer.cs">
       <DependentUpon>frmSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllForms\SupplierForms\frmSupplierBalances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllForms\SupplierForms\frmSupplierBalances.Designer.cs">
+      <DependentUpon>frmSupplierBalances.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AllReports\rptPaymentRecipt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPaymentRecipt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AllReports\rptPurchaseReciptReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPurchaseReciptReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="AllReports\rptStock.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -122,6 +152,12 @@
     <EmbeddedResource Include="AllForms\PurchaseForms\frmPurchasePayment.resx">
       <DependentUpon>frmPurchasePayment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\Receipt Forms\frmPurchaseDetailReport.resx">
+      <DependentUpon>frmPurchaseDetailReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\Receipt Forms\frmReceiptPayment.resx">
+      <DependentUpon>frmReceiptPayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AllForms\StockForms\frmCategory.resx">
       <DependentUpon>frmCategory.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +169,17 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AllForms\PurchaseForms\frmSupplier.resx">
       <DependentUpon>frmSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllForms\SupplierForms\frmSupplierBalances.resx">
+      <DependentUpon>frmSupplierBalances.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllReports\rptPaymentRecipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPaymentRecipt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AllReports\rptPurchaseReciptReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPurchaseReciptReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="AllReports\rptStock.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

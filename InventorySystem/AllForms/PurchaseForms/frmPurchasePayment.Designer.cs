@@ -31,17 +31,33 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvAllPurchases = new System.Windows.Forms.DataGridView();
+            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvPurchaseDetail = new System.Windows.Forms.DataGridView();
+            this.ColPDID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColproductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColItemCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvPaymentDetail = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.printReciptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnAddPayment = new System.Windows.Forms.Button();
             this.dtpPaymentDate = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtRemainingBalance = new System.Windows.Forms.TextBox();
             this.txtPayment = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -54,10 +70,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.btnAddPayment = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -65,16 +77,8 @@
             this.lblTotalPayment = new System.Windows.Forms.Label();
             this.lblRemainingBalance = new System.Windows.Forms.Label();
             this.epPurchase = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPDID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColproductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPQ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColItemCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.purchaseInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllPurchases)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -83,9 +87,11 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaymentDetail)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epPurchase)).BeginInit();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -110,6 +116,7 @@
             this.ColPDate,
             this.ColTotalAmount,
             this.ColDescription});
+            this.dgvAllPurchases.ContextMenuStrip = this.contextMenuStrip2;
             this.dgvAllPurchases.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvAllPurchases.Location = new System.Drawing.Point(3, 16);
             this.dgvAllPurchases.MultiSelect = false;
@@ -121,6 +128,30 @@
             this.dgvAllPurchases.TabIndex = 0;
             this.dgvAllPurchases.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAllPurchases_CellClick);
             this.dgvAllPurchases.SelectionChanged += new System.EventHandler(this.dgvAllPurchases_SelectionChanged);
+            // 
+            // ColID
+            // 
+            this.ColID.HeaderText = "ID";
+            this.ColID.Name = "ColID";
+            this.ColID.ReadOnly = true;
+            // 
+            // ColPDate
+            // 
+            this.ColPDate.HeaderText = "Purchase Date";
+            this.ColPDate.Name = "ColPDate";
+            this.ColPDate.ReadOnly = true;
+            // 
+            // ColTotalAmount
+            // 
+            this.ColTotalAmount.HeaderText = "Total Amount";
+            this.ColTotalAmount.Name = "ColTotalAmount";
+            this.ColTotalAmount.ReadOnly = true;
+            // 
+            // ColDescription
+            // 
+            this.ColDescription.HeaderText = "Description";
+            this.ColDescription.Name = "ColDescription";
+            this.ColDescription.ReadOnly = true;
             // 
             // groupBox3
             // 
@@ -155,6 +186,42 @@
             this.dgvPurchaseDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPurchaseDetail.Size = new System.Drawing.Size(405, 229);
             this.dgvPurchaseDetail.TabIndex = 0;
+            // 
+            // ColPDID
+            // 
+            this.ColPDID.HeaderText = "ID";
+            this.ColPDID.Name = "ColPDID";
+            this.ColPDID.ReadOnly = true;
+            // 
+            // ColproductID
+            // 
+            this.ColproductID.HeaderText = "ProductID";
+            this.ColproductID.Name = "ColproductID";
+            this.ColproductID.ReadOnly = true;
+            // 
+            // ColProductName
+            // 
+            this.ColProductName.HeaderText = "ProductName";
+            this.ColProductName.Name = "ColProductName";
+            this.ColProductName.ReadOnly = true;
+            // 
+            // ColPQ
+            // 
+            this.ColPQ.HeaderText = "Quantity";
+            this.ColPQ.Name = "ColPQ";
+            this.ColPQ.ReadOnly = true;
+            // 
+            // ColUnitPrice
+            // 
+            this.ColUnitPrice.HeaderText = "Unit Price";
+            this.ColUnitPrice.Name = "ColUnitPrice";
+            this.ColUnitPrice.ReadOnly = true;
+            // 
+            // ColItemCost
+            // 
+            this.ColItemCost.HeaderText = "Item Cost";
+            this.ColItemCost.Name = "ColItemCost";
+            this.ColItemCost.ReadOnly = true;
             // 
             // groupBox5
             // 
@@ -195,6 +262,7 @@
             this.dgvPaymentDetail.AllowUserToAddRows = false;
             this.dgvPaymentDetail.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvPaymentDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPaymentDetail.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvPaymentDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPaymentDetail.Location = new System.Drawing.Point(3, 3);
             this.dgvPaymentDetail.MultiSelect = false;
@@ -204,6 +272,20 @@
             this.dgvPaymentDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPaymentDetail.Size = new System.Drawing.Size(409, 200);
             this.dgvPaymentDetail.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.printReciptToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(136, 26);
+            // 
+            // printReciptToolStripMenuItem
+            // 
+            this.printReciptToolStripMenuItem.Name = "printReciptToolStripMenuItem";
+            this.printReciptToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.printReciptToolStripMenuItem.Text = "Print Recipt";
+            this.printReciptToolStripMenuItem.Click += new System.EventHandler(this.printReciptToolStripMenuItem_Click);
             // 
             // tabPage2
             // 
@@ -225,6 +307,26 @@
             this.tabPage2.Text = "Payment List";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(190, 166);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(96, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Clear";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnAddPayment
+            // 
+            this.btnAddPayment.Location = new System.Drawing.Point(292, 165);
+            this.btnAddPayment.Name = "btnAddPayment";
+            this.btnAddPayment.Size = new System.Drawing.Size(96, 23);
+            this.btnAddPayment.TabIndex = 3;
+            this.btnAddPayment.Text = "Add";
+            this.btnAddPayment.UseVisualStyleBackColor = true;
+            this.btnAddPayment.Click += new System.EventHandler(this.btnAddPayment_Click);
+            // 
             // dtpPaymentDate
             // 
             this.dtpPaymentDate.CustomFormat = "dd MMMM, yyyy";
@@ -233,6 +335,15 @@
             this.dtpPaymentDate.Name = "dtpPaymentDate";
             this.dtpPaymentDate.Size = new System.Drawing.Size(239, 20);
             this.dtpPaymentDate.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(30, 105);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Description";
             // 
             // label6
             // 
@@ -260,6 +371,14 @@
             this.label5.Size = new System.Drawing.Size(48, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Payment";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(149, 98);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(239, 61);
+            this.txtDescription.TabIndex = 2;
             // 
             // txtRemainingBalance
             // 
@@ -376,43 +495,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Search Supplier";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(30, 105);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Description";
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(149, 98);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(239, 61);
-            this.txtDescription.TabIndex = 2;
-            // 
-            // btnAddPayment
-            // 
-            this.btnAddPayment.Location = new System.Drawing.Point(292, 165);
-            this.btnAddPayment.Name = "btnAddPayment";
-            this.btnAddPayment.Size = new System.Drawing.Size(96, 23);
-            this.btnAddPayment.TabIndex = 3;
-            this.btnAddPayment.Text = "Add";
-            this.btnAddPayment.UseVisualStyleBackColor = true;
-            this.btnAddPayment.Click += new System.EventHandler(this.btnAddPayment_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(190, 166);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Clear";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -479,65 +561,19 @@
             // 
             this.epPurchase.ContainerControl = this;
             // 
-            // ColID
+            // contextMenuStrip2
             // 
-            this.ColID.HeaderText = "ID";
-            this.ColID.Name = "ColID";
-            this.ColID.ReadOnly = true;
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.purchaseInvoiceToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(181, 48);
             // 
-            // ColPDate
+            // purchaseInvoiceToolStripMenuItem
             // 
-            this.ColPDate.HeaderText = "Purchase Date";
-            this.ColPDate.Name = "ColPDate";
-            this.ColPDate.ReadOnly = true;
-            // 
-            // ColTotalAmount
-            // 
-            this.ColTotalAmount.HeaderText = "Total Amount";
-            this.ColTotalAmount.Name = "ColTotalAmount";
-            this.ColTotalAmount.ReadOnly = true;
-            // 
-            // ColDescription
-            // 
-            this.ColDescription.HeaderText = "Description";
-            this.ColDescription.Name = "ColDescription";
-            this.ColDescription.ReadOnly = true;
-            // 
-            // ColPDID
-            // 
-            this.ColPDID.HeaderText = "ID";
-            this.ColPDID.Name = "ColPDID";
-            this.ColPDID.ReadOnly = true;
-            // 
-            // ColproductID
-            // 
-            this.ColproductID.HeaderText = "ProductID";
-            this.ColproductID.Name = "ColproductID";
-            this.ColproductID.ReadOnly = true;
-            // 
-            // ColProductName
-            // 
-            this.ColProductName.HeaderText = "ProductName";
-            this.ColProductName.Name = "ColProductName";
-            this.ColProductName.ReadOnly = true;
-            // 
-            // ColPQ
-            // 
-            this.ColPQ.HeaderText = "Quantity";
-            this.ColPQ.Name = "ColPQ";
-            this.ColPQ.ReadOnly = true;
-            // 
-            // ColUnitPrice
-            // 
-            this.ColUnitPrice.HeaderText = "Unit Price";
-            this.ColUnitPrice.Name = "ColUnitPrice";
-            this.ColUnitPrice.ReadOnly = true;
-            // 
-            // ColItemCost
-            // 
-            this.ColItemCost.HeaderText = "Item Cost";
-            this.ColItemCost.Name = "ColItemCost";
-            this.ColItemCost.ReadOnly = true;
+            this.purchaseInvoiceToolStripMenuItem.Name = "purchaseInvoiceToolStripMenuItem";
+            this.purchaseInvoiceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.purchaseInvoiceToolStripMenuItem.Text = "Purchase Invoice";
+            this.purchaseInvoiceToolStripMenuItem.Click += new System.EventHandler(this.purchaseInvoiceToolStripMenuItem_Click);
             // 
             // frmPurchasePayment
             // 
@@ -567,11 +603,13 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaymentDetail)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epPurchase)).EndInit();
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -624,5 +662,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPQ;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColUnitPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColItemCost;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem printReciptToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem purchaseInvoiceToolStripMenuItem;
     }
 }

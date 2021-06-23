@@ -1,6 +1,7 @@
 ﻿using InventorySystem.AllForms.CustomerForms;
 using InventorySystem.AllForms.PurchaseForms;
 using InventorySystem.AllForms.StockForms;
+using InventorySystem.AllForms.SupplierForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -82,6 +83,12 @@ namespace InventorySystem.AllForms
         private void purchasePaymentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmPurchasePayment frm = new frmPurchasePayment();
+            frm.ShowDialog();
+        }
+
+        private void supplierBalancesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSupplierBalances frm = new frmSupplierBalances();
             frm.ShowDialog();
         }
     }
